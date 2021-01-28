@@ -1,0 +1,9 @@
+#settings.dat
+
+#Discord token; refer to https://discordpy.readthedocs.io/en/latest/discord.html
+DISCORD_TOKEN=[token]
+
+#the maximum number of decks the bot will extract from a single post. -1 for unlimited.
+MAX_DECK_POST=3
+
+BORDER_COLOR=0x0000ff
