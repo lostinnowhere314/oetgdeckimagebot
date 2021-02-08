@@ -30,8 +30,8 @@ class deck_client(discord.Client):
         self.max_decks=int(settings['MAX_DECK_POST'])
         self.border_color=int(settings['BORDER_COLOR'], base=16)
         
-        #Regex for searching messages for deck codes, also attempting to make sure they are not part of a URL and that they (hopefully) aren't just random numbers
-        self.deck_regex = r"(?:(?<!\S)|\A)((?:[01][0-9a-v](?<!00)[0-9a-v]{3}){3,})(?:\Z|(?![0-9a-zA-Z]))"
+        #Regex for searching messages for deck codes, also attempting to make sure they aren't just a random string that isn't a deck code
+        self.deck_regex = r"(?:\s|\A|(?:deck\.htm#)|(?:deck\/))((?:[01][0-9a-v](?<!00)[0-9a-v]{3}){3,})(?:\Z|(?![0-9a-zA-Z]))"
         
         #Try loading server settings
         self.server_settings = utils.load_channel_data("servers.dat")
